@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Profile Optimizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-wrapper">
+        <img class="logo-icon" src="../icons/icon48.png" alt="Logo">
+        <span class="logo-text">Profile<span class="highlight">Optimizer</span></span>
+      </div>
+      <span class="badge">V3</span>
+    </header>
+
+    <main class="app-body">
+      <div id="status-card" class="status-banner">
+        <span id="status-dot" class="dot"></span>
+        <span id="status-message">Initializing...</span>
+      </div>
+
+      <div class="action-section">
+        <button id="btn-analyze" class="btn btn-primary" disabled>
+          <span class="btn-text">✨ Analyze Profile</span>
+        </button>
+        <button id="btn-open-sidebar" class="btn btn-secondary">
+          <span class="btn-text">Open Full Console</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+
+      <div id="score-container" class="score-card hidden">
+        <div class="score-radial">
+          <svg class="progress-ring" width="60" height="60">
+            <circle class="progress-ring-bg" stroke="rgba(255, 255, 255, 0.1)" stroke-width="6" fill="transparent" r="24" cx="30" cy="30"/>
+            <circle id="score-ring" class="progress-ring-bar" stroke="#6366f1" stroke-width="6" fill="transparent" r="24" cx="30" cy="30"/>
+          </svg>
+          <div id="score-value" class="score-number">--</div>
+        </div>
+        <div class="score-info">
+          <div class="score-title">Last ATS Score</div>
+          <div id="score-grade" class="score-grade">N/A</div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <div class="settings-row">
+        <label for="input-api" class="settings-label">Backend Proxy:</label>
+        <input type="text" id="input-api" class="settings-input" placeholder="http://localhost:3001">
+      </div>
+      <button id="btn-save-settings" class="btn-save">Save Settings</button>
+    </footer>
+  </div>
+
+  <script src="../utils/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

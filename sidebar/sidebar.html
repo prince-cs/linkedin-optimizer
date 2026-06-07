@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimization Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="sidebar-container">
+    <!-- Header -->
+    <header class="sidebar-header">
+      <div class="title-group">
+        <h1 class="header-title">Optimization Console</h1>
+        <p class="header-subtitle">Real-time ATS & AI-driven insights</p>
+      </div>
+      <div class="header-actions">
+        <button id="btn-refresh" class="icon-btn" title="Refresh Profile Data">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z" />
+          </svg>
+        </button>
+        <button id="btn-close" class="icon-btn close-btn" title="Close Panel">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Scrollable Content -->
+    <main class="sidebar-body">
+      <!-- Profile Identification -->
+      <div id="profile-meta" class="profile-meta-card">
+        <div class="avatar-placeholder">U</div>
+        <div class="meta-info">
+          <div id="profile-name" class="profile-name">Guest User</div>
+          <div id="profile-headline-text" class="profile-headline">No profile details extracted yet.</div>
+        </div>
+      </div>
+
+      <!-- Score Summary -->
+      <section class="section-card score-summary-card">
+        <div class="radial-score-large">
+          <svg class="progress-circle" viewBox="0 0 100 100">
+            <circle class="progress-circle-bg" stroke="rgba(255, 255, 255, 0.05)" stroke-width="8" fill="transparent" r="40" cx="50" cy="50"/>
+            <circle id="gauge-ring" class="progress-circle-bar" stroke="#6366f1" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="251.2" fill="transparent" r="40" cx="50" cy="50"/>
+          </svg>
+          <div class="score-center">
+            <span id="gauge-val" class="score-number">--</span>
+            <span class="score-max">/100</span>
+          </div>
+        </div>
+        <div class="grade-details">
+          <div id="gauge-grade" class="grade-badge">Fair</div>
+          <p class="grade-description">Your local ATS optimization grade.</p>
+        </div>
+      </section>
+
+      <!-- Wins and Issues (Accordions) -->
+      <section class="accordions-container">
+        <!-- Issues Accordion -->
+        <details class="accordion-item" open>
+          <summary class="accordion-header">
+            <span class="header-title">Optimization Issues</span>
+            <span id="badge-issues-count" class="count-badge danger">0</span>
+          </summary>
+          <div class="accordion-content">
+            <div id="issues-list" class="issues-list">
+              <!-- Issues dynamically injected -->
+            </div>
+          </div>
+        </details>
+
+        <!-- Wins Accordion -->
+        <details class="accordion-item">
+          <summary class="accordion-header">
+            <span class="header-title">Strength Wins</span>
+            <span id="badge-wins-count" class="count-badge success">0</span>
+          </summary>
+          <div class="accordion-content">
+            <div id="wins-list" class="wins-list">
+              <!-- Wins dynamically injected -->
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- AI Optimization trigger -->
+      <section class="section-card ai-trigger-card">
+        <h3 class="card-title">✨ AI Profile Optimizer</h3>
+        <p class="card-description">Generate optimized, recruiter-ready headlines, a professional about summary, and ATS-tailored experience bullet suggestions.</p>
+        
+        <button id="btn-ai-optimize" class="btn btn-ai">
+          <span class="btn-spinner hidden"></span>
+          <span class="btn-ai-text">Optimize Profile with AI</span>
+        </button>
+      </section>
+
+      <!-- AI Suggestions Dashboard (Visible after AI call) -->
+      <section id="ai-suggestions" class="section-card ai-suggestions-card hidden">
+        <h3 class="card-title">AI Optimizations</h3>
+        
+        <!-- Tab Controls -->
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="tab-headline">Headline</button>
+          <button class="tab-btn" data-tab="tab-about">About</button>
+          <button class="tab-btn" data-tab="tab-experience">Experience</button>
+          <button class="tab-btn" data-tab="tab-keywords">Keywords</button>
+        </div>
+
+        <!-- Tab Content Containers -->
+        <div class="tabs-content">
+          <!-- Tab 1: Headline -->
+          <div id="tab-headline" class="tab-panel active">
+            <p class="tab-panel-intro">Recruiter-ready headline options:</p>
+            <div id="headline-options" class="options-list">
+              <!-- Headlines injected -->
+            </div>
+          </div>
+
+          <!-- Tab 2: About -->
+          <div id="tab-about" class="tab-panel">
+            <p class="tab-panel-intro">Rewritten LinkedIn About summary:</p>
+            <div class="code-box-container">
+              <button id="btn-copy-about" class="btn-copy-floating">Copy</button>
+              <pre id="about-rewrite-text" class="code-box-pre">About summary will display here...</pre>
+            </div>
+          </div>
+
+          <!-- Tab 3: Experience -->
+          <div id="tab-experience" class="tab-panel">
+            <p class="tab-panel-intro">Tailored role modifications and bullet point advice:</p>
+            <div id="experience-tips" class="tips-list">
+              <!-- Tips injected -->
+            </div>
+          </div>
+
+          <!-- Tab 4: Keywords -->
+          <div id="tab-keywords" class="tab-panel">
+            <div class="keyword-insight-section">
+              <h4 class="sub-section-title text-danger">Missing Keywords (ATS Gaps)</h4>
+              <div id="missing-keywords-list" class="pills-list">
+                <!-- Injected missing keywords -->
+              </div>
+            </div>
+            <div class="keyword-insight-section mt-12">
+              <h4 class="sub-section-title text-success">Recommended Skills to Add</h4>
+              <div id="skills-add-list" class="pills-list">
+                <!-- Injected skills to add -->
+              </div>
+            </div>
+            <div id="insight-overall" class="overall-insight-box mt-12">
+              <strong>Strategic Insight:</strong> <span id="insight-text">...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Floating Toast Notification -->
+    <div id="toast-notification" class="toast hidden">Copied to clipboard!</div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../utils/storage.js"></script>
+  <script src="../utils/scorer.js"></script>
+  <script src="sidebar.js"></script>
+</body>
+</html>

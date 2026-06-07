@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alex Carter | LinkedIn Mock Profile</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f3f2f0;
+      margin: 0;
+      padding: 20px;
+      color: #1d2226;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      margin-bottom: 20px;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+    .profile-header {
+      position: relative;
+    }
+    .banner {
+      height: 150px;
+      background: linear-gradient(135deg, #0a66c2 0%, #1e3a8a 100%);
+      border-radius: 8px 8px 0 0;
+      margin: -24px -24px 20px -24px;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      background: #ccc;
+      border: 4px solid white;
+      border-radius: 50%;
+      margin-top: -80px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+    }
+    .pv-text-details__left-panel h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .text-body-medium {
+      font-size: 16px;
+      color: #666;
+      margin-top: 4px;
+    }
+    .text-body-small {
+      font-size: 14px;
+      color: #888;
+      margin-top: 4px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    .pvs-list__paged-list-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f3f2f0;
+    }
+    .pvs-list__paged-list-item:last-child {
+      border-bottom: none;
+    }
+    span[aria-hidden="true"] {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Profile Top Card -->
+  <div class="card profile-header">
+    <div class="banner"></div>
+    <div class="avatar">AC</div>
+    <div class="pv-text-details__left-panel">
+      <h1 class="text-heading-xlarge">Alex Carter</h1>
+      <div class="text-body-medium break-words">Software Engineer at TechCorp | React, Node.js, Cloud Architect</div>
+      <span class="text-body-small">San Francisco Bay Area</span>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="card">
+    <h2 id="about" class="section-title">About</h2>
+    <div>
+      <div class="display-flex">
+        <span aria-hidden="true">
+          Passionate software engineer with over 4 years of experience designing and building high-scale web applications. Skilled in React, Node.js, AWS, and TypeScript. Focused on building clean, modular codebases and driving product success through technical excellence.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience Section -->
+  <div class="card">
+    <h2 id="experience" class="section-title">Experience</h2>
+    <div>
+      <!-- Role 1 -->
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">Senior Software Engineer</span>
+        <span aria-hidden="true">TechCorp</span>
+        <span aria-hidden="true">Jan 2022 - Present · 2 yrs 5 mos</span>
+        <span aria-hidden="true">
+          Led the frontend optimization of our core SaaS platform, improving page load speed by 35% and user engagement by 15%. Mentor junior engineers and collaborate with product managers to deliver state-of-the-art features using React and AWS.
+        </span>
+      </div>
+      <!-- Role 2 -->
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">Software Developer</span>
+        <span aria-hidden="true">WebStart Inc</span>
+        <span aria-hidden="true">Jun 2020 - Dec 2021 · 1 yr 7 mos</span>
+        <span aria-hidden="true">
+          Built and shipped various features using Vue.js and Express. Refactored database schema, reducing query times by 20%. Designed REST APIs and integrated Stripe payments.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="card">
+    <h2 id="skills" class="section-title">Skills</h2>
+    <div>
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">JavaScript</span>
+      </div>
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">React</span>
+      </div>
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">Node.js</span>
+      </div>
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">TypeScript</span>
+      </div>
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">Amazon Web Services (AWS)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education Section -->
+  <div class="card">
+    <h2 id="education" class="section-title">Education</h2>
+    <div>
+      <div class="pvs-list__paged-list-item">
+        <span aria-hidden="true" class="bold">State University</span>
+        <span aria-hidden="true">Bachelor of Science in Computer Science</span>
+        <span aria-hidden="true">2016 - 2020</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
